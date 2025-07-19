@@ -215,9 +215,9 @@
                     <h2 for="paquetes">Paquetes</h2>
                     <br>
                     <select name="paquetes" id="paquetes">
-                        <option value="residencial">Residencial</option>
-                        <option value="pyme">PYMES</option>
-                        <option value="empresa">Empresas</option>
+                        <option value="residencial">Residencial (321 MXN)</option>
+                        <option value="pyme">PYMES (654 MXN)</option>
+                        <option value="empresa">Empresas (987 MXN)</option>
                     </select>
                 </div>
 
@@ -260,9 +260,40 @@
                 total = total + 300;
             }
 
-            formulario.resultado.value = total;
+            if (formulario.antivirus.checked == true)
+            {
+                total = total + 50;
+            }
 
-            alert("El total a pagar es: " + total);
+            if (formulario.nube.checked)
+            {
+                total = total + 150;
+            }
+
+            if (formulario.ws.checked == true)
+            {
+                total = total + 250;
+            }
+
+            if (formulario.paquetes.value == "residencial")
+            {
+                total = total + 321;
+            }
+
+            else if (formulario.paquetes.value == "pyme")
+            {
+                total = total + 654;
+            }
+
+            else if (formulario.paquetes.value == "empresa")
+            {
+                total = total + 987;
+            }
+
+            /*alert("El total a pagar es: " + total);*/
+
+            formulario.resultado.value = total;
+            
         }
         alert("Hola mundo, estoy en JavaScript");
 
